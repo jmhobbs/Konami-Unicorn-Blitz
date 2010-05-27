@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<title>Konami!</title>
+		<script type="text/javascript">
+			/*
+				Thanks to
+				http://www.howtocreate.co.uk/tutorials/javascript/eventinfo
+				and
+				http://www.webfetti.com/MySpace/Glitter/Animals.jhtml
+			*/
+			var Konami = {
+				code: [ 38, 38, 40, 40, 37, 39, 37, 39, 66, 65 ],
+
+				index: 0,
+
+				init: function () {
+					document.onkeyup = Konami.keyUp
+				},
+
+				keyUp: function ( e ) {
+					if( !e ) {
+						if( window.event ) {
+							e = window.event;
+						}
+						else {
+							return;
+						}
+					}
+
+					if( typeof( e.keyCode ) == 'number'  ) {
+						e = e.keyCode;
+					}
+					else if( typeof( e.which ) == 'number' ) {
+						e = e.which;
+					}
+					else if( typeof( e.charCode ) == 'number'  ) {
+						e = e.charCode;
+					}
+					else {
+						return;
+					}
+
+					if( e == Konami.code[Konami.index] ) {
+						++Konami.index
+						if( Konami.index == Konami.code.length ) {
+							Konami.unicorns();
+							Konami.index = 0;
+						}
+					}
+					else {
+						Konami.index = 0;
+					}
+				},
+
+				unicorns: function () {
+					alert( 'ZOMG! UNIORNZ!' );
+				}
+			}
+			Konami.init();
+		</script>
+	</head>
+	<html>
+
+	</html>
+</body>
