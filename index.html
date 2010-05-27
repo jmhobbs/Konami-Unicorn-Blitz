@@ -44,7 +44,6 @@
 						++Konami.index
 						if( Konami.index == Konami.code.length ) {
 							Konami.unicorns();
-							Konami.index = 0;
 						}
 					}
 					else {
@@ -53,9 +52,28 @@
 				},
 
 				unicorns: function () {
-					alert( 'ZOMG! UNIORNZ!' );
+					document.body.style.overflow = 'hidden';
+					var unicorns = new Array();
+					_height = window.innerHeight;
+					_width = window.innerWidth;
+					for( i = 0; i < 50; ++i ) {
+						unicorns.push( document.createElement( 'img' ) );
+						unicorns[i].setAttribute( 'id', 'konami-corn' );
+						unicorns[i].setAttribute( 'src', ( ( i % 4 ) + 1 ) + '.gif' );
+						_top = Math.floor( Math.random() * _height ) - 100;
+						_left = Math.floor( Math.random() * _width  ) - 100;
+						unicorns[i].setAttribute( 'style', 'position: absolute; z-index: 9998; top: ' + _top + 'px; left: ' + _left + 'px;' );
+						document.body.appendChild( unicorns[i] );
+					}
+					words = document.createElement( 'div' );
+					words.innerHTML = 'UNICORNS';
+					_t_top = ( Math.floor( _top / 2 ) - 100 );
+					_t_top = ( _t_top < 0 ) ? 0 : _t_top;
+					words.setAttribute( 'style', 'font-size: 100px; text-shadow: #FFF 0 0 20px; font-weight: bold; position: absolute; top: ' + _t_top + 'px; width: 100%; text-align: center; z-index: 9999;' );
+					document.body.appendChild( words );
 				}
 			}
+
 			Konami.init();
 		</script>
 	</head>
