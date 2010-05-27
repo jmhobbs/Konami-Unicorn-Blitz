@@ -60,14 +60,14 @@ var Konami = {
 			unicorns[i].setAttribute( 'src', 'http://github.com/jmhobbs/Konami-Unicorn-Blitz/raw/master/' + ( ( i % 4 ) + 1 ) + '.gif' );
 			_top = Math.floor( Math.random() * _height ) - 100;
 			_left = Math.floor( Math.random() * _width  ) - 100;
-			unicorns[i].setAttribute( 'style', 'position: absolute; z-index: 9998; top: ' + _top + 'px; left: ' + _left + 'px;' );
+			unicorns[i].setAttribute( 'style', 'position: fixed; z-index: 9998; top: ' + _top + 'px; left: ' + _left + 'px;' );
 			document.body.appendChild( unicorns[i] );
 		}
 		words = document.createElement( 'div' );
 		words.innerHTML = 'UNICORNS';
 		_t_top = ( Math.floor( _top / 2 ) - 100 );
 		_t_top = ( _t_top < 0 ) ? 0 : _t_top;
-		words.setAttribute( 'style', 'font-size: 100px; text-shadow: #FFF 0 0 20px; font-weight: bold; position: absolute; top: ' + _t_top + 'px; width: 100%; text-align: center; z-index: 9999;' );
+		words.setAttribute( 'style', 'font-size: 100px; text-shadow: #FFF 0 0 20px; font-weight: bold; position: fixed; top: ' + _t_top + 'px; width: 100%; text-align: center; z-index: 9999;' );
 		document.body.appendChild( words );
 	}
 }
