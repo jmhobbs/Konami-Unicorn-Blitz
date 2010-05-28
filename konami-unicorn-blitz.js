@@ -8,7 +8,14 @@
 */
 var Konami = {
 	// Set this to whatever path (relative or absolute) where your images are stored.
-	imagePath: 'http://github.com/jmhobbs/Konami-Unicorn-Blitz/raw/master/', 
+	imagePath: 'http://github.com/jmhobbs/Konami-Unicorn-Blitz/raw/master/',
+	// You need to have all of your images in the same format, numbered starting at 1
+	imageCount: 4,
+	imageFormat: '.gif',
+	// How many unicorns do you want to spam them with?
+	unicornCount: 50,
+	// What do you want the text on top to be?
+	words: 'UNICORNS',
 
 	code: [ 38, 38, 40, 40, 37, 39, 37, 39, 66, 65 ],
 
@@ -54,20 +61,18 @@ var Konami = {
 
 	unicorns: function () {
 		document.body.style.overflow = 'hidden';
-		var unicorns = new Array();
 		_height = window.innerHeight;
 		_width = window.innerWidth;
-		for( i = 0; i < 50; ++i ) {
-			unicorns.push( document.createElement( 'img' ) );
-			unicorns[i].setAttribute( 'id', 'konami-corn' );
-			unicorns[i].setAttribute( 'src', Konami.imagePath + ( ( i % 4 ) + 1 ) + '.gif' );
+		for( i = 0; i < Konami.unicornCount; ++i ) {
+			unicorn = document.createElement( 'img' );
+			unicorn.setAttribute( 'src', Konami.imagePath + ( ( i % Konami.imageCount ) + 1 ) + '.gif' );
 			_top = Math.floor( Math.random() * _height ) - 100;
 			_left = Math.floor( Math.random() * _width  ) - 100;
-			unicorns[i].setAttribute( 'style', 'position: fixed; z-index: 9998; top: ' + _top + 'px; left: ' + _left + 'px;' );
-			document.body.appendChild( unicorns[i] );
+			unicorn.setAttribute( 'style', 'position: fixed; z-index: 9998; top: ' + _top + 'px; left: ' + _left + 'px;' );
+			document.body.appendChild( unicorn );
 		}
 		words = document.createElement( 'div' );
-		words.innerHTML = 'UNICORNS';
+		words.innerHTML = Konami.words;
 		_t_top = ( Math.floor( _top / 2 ) - 100 );
 		_t_top = ( _t_top < 0 ) ? 0 : _t_top;
 		words.setAttribute( 'style', 'font-size: 100px; text-shadow: #FFF 0 0 20px; font-weight: bold; position: fixed; top: ' + _t_top + 'px; width: 100%; text-align: center; z-index: 9999;' );
