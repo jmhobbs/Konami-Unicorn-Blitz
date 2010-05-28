@@ -1,0 +1,14 @@
+{
+  "name": "Konami Unicorn Blitz",
+	"description": "Now you can take unicorns with you anywhere you go!",
+  "version": "1.0",
+  "permissions": [
+    "tabs", "http://*/*"
+  ],
+	"content_scripts": [
+		{
+			"matches": ["http://*/*"],
+			"js": ["konami-unicorn-blitz.js"]
+		}
+	]
+}
