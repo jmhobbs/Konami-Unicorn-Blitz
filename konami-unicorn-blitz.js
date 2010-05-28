@@ -7,6 +7,9 @@
 		http://www.webfetti.com/MySpace/Glitter/Animals.jhtml
 */
 var Konami = {
+	// Set this to whatever path (relative or absolute) where your images are stored.
+	imagePath: 'http://github.com/jmhobbs/Konami-Unicorn-Blitz/raw/master/', 
+
 	code: [ 38, 38, 40, 40, 37, 39, 37, 39, 66, 65 ],
 
 	index: 0,
@@ -57,7 +60,7 @@ var Konami = {
 		for( i = 0; i < 50; ++i ) {
 			unicorns.push( document.createElement( 'img' ) );
 			unicorns[i].setAttribute( 'id', 'konami-corn' );
-			unicorns[i].setAttribute( 'src', 'http://github.com/jmhobbs/Konami-Unicorn-Blitz/raw/master/' + ( ( i % 4 ) + 1 ) + '.gif' );
+			unicorns[i].setAttribute( 'src', Konami.imagePath + ( ( i % 4 ) + 1 ) + '.gif' );
 			_top = Math.floor( Math.random() * _height ) - 100;
 			_left = Math.floor( Math.random() * _width  ) - 100;
 			unicorns[i].setAttribute( 'style', 'position: fixed; z-index: 9998; top: ' + _top + 'px; left: ' + _left + 'px;' );
