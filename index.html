@@ -50,21 +50,40 @@
     	<p>Try out the Konami code on this page. Right Now.</p>
 			<p><tt>UP-UP-DOWN-DOWN-LEFT-RIGHT-LEFT-RIGHT-B-A</tt></p>
 
+			<hr/>
+
 			<h2>Usage</h2>
 			<p>
 				Adding this to your page is easy, just insert the following code above your <tt>&lt;/body&gt;</tt> tag.
 				<pre style="overflow: auto;">&lt;script type="text/javascript" src="http://github.com/jmhobbs/Konami-Unicorn-Blitz/raw/master/konami-unicorn-blitz.js"&gt;&lt;/script&gt;</pre>
 			</p>
 
-			<h2>Want it on every page?</h2>
+			<h2>Configuration Options</h2>
+			<p>
+				Want to get fancy? Here are some configuration options you can set, along with their defaults.
+				<pre>// Set this to whatever path (relative or absolute) where your images are stored.
+Konami.imagePath = 'http://github.com/jmhobbs/Konami-Unicorn-Blitz/raw/master/';
+// You need to have all of your images in the same format, numbered starting at 1
+Konami.imageCount: 4;
+Konami.imageFormat: '.gif';
+// How many unicorns (or whatever) do you want to spam them with?
+Konami.unicornCount: 50;
+// What do you want the text on top to be?
+Konami.words: 'UNICORNS';</pre>
+			</p>
+
+			<hr/>
+
+			<h2>Want it on <u>every</u> page?</h2>
 			<p>
 				You can try out the experimental <a href="konami-unicorn-blitz.crx">Chrome Extension</a> and have unicorns on every page you visit!
 			</p>
 
+			<hr/>
+
 			<h2>License</h2>
 			<p>
-				<pre>
-Copyright (c) 2010 John Hobbs
+				<pre>Copyright (c) 2010 John Hobbs
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -82,8 +101,7 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-				</pre>
+THE SOFTWARE.</pre>
 			</p>
 
 			<h2>Authors</h2>
