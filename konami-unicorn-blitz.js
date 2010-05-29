@@ -18,6 +18,7 @@ var Konami = {
 	words: 'UNICORNS',
 	/* if you want to auto hide the unicorns after some time (in milliseconds) */
 	hideAfter: 30000,
+	hideTimeoutId: null,
 
 	code: [ 38, 38, 40, 40, 37, 39, 37, 39, 66, 65 ],
 
@@ -101,11 +102,15 @@ var Konami = {
 		document.body.appendChild( words );
 
 		if(Konami.hideAfter > 0) {
-			setTimeout(function() { Konami.remove() }, Konami.hideAfter);
+			Konami.hideAfterTimeoutId = setTimeout(function() { Konami.remove() }, Konami.hideAfter);
 		}
 	},
 
 	remove: function() {
+		if(Konami.hideAfterTimeoutId != null) {
+			clearTimeout(Konami.hideAfterTimeoutId);
+			Konami.hideAfterTimeoutId = null;
+		}
 		Konami.active = false;
 		document.body.style.overflow = 'auto';
 		while ( Konami.elements.length ) {
