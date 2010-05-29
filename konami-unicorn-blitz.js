@@ -17,7 +17,7 @@ var Konami = {
 	/* What do you want the text on top to be? */
 	words: 'UNICORNS',
 	/* if you want to auto hide the unicorns after some time (in milliseconds) */
-	hideAfter: 30000,
+	hideAfter: 0,
 	hideTimeoutId: null,
 
 	code: [ 38, 38, 40, 40, 37, 39, 37, 39, 66, 65 ],
