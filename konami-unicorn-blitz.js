@@ -16,6 +16,8 @@ var Konami = {
 	unicornCount: 50,
 	/* What do you want the text on top to be? */
 	words: 'UNICORNS',
+	/* if you want to auto hide the unicorns after some time (in milliseconds) */
+	hideAfter: 30000,
 
 	code: [ 38, 38, 40, 40, 37, 39, 37, 39, 66, 65 ],
 
@@ -97,6 +99,10 @@ var Konami = {
 		var _t_top = ( _t_top < 0 ) ? 0 : _t_top;
 		words.setAttribute( 'style', 'font-size: 100px; text-shadow: #FFF 0 0 20px; font-weight: bold; position: fixed; top: ' + _t_top + 'px; width: 100%; text-align: center; z-index: 9999;' );
 		document.body.appendChild( words );
+
+		if(Konami.hideAfter > 0) {
+			setTimeout(function() { Konami.remove() }, Konami.hideAfter);
+		}
 	},
 
 	remove: function() {
