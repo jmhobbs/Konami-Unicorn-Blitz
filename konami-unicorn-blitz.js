@@ -19,12 +19,15 @@ var Konami = {
 	/* if you want to auto hide the unicorns after some time (in milliseconds) */
 	hideAfter: 0,
 	hideTimeoutId: null,
+	/* elements created will have the following id/classes set. the idPrefix will
+	be used in conjunction with a 1-up number for each image created */
+	idPrefix: 'konami_',
+	className: 'konami_code',
 
 	code: [ 38, 38, 40, 40, 37, 39, 37, 39, 66, 65 ],
 
 	index: 0,
 
-	idPrefix: 'konami_',
 	active: false,
 	elements: [],
 
@@ -85,7 +88,7 @@ var Konami = {
 			var _left = Math.floor( Math.random() * _width  ) - 100;
 			unicorn.setAttribute( 'style', 'position: fixed; z-index: 9998; top: ' + _top + 'px; left: ' + _left + 'px;' );
 			unicorn.setAttribute('id', imageId);
-			unicorn.setAttribute('class', 'konami_code');
+			unicorn.setAttribute('class', Konami.className);
 			/* store our element id's so that we can remove them from the DOM */
 			Konami.elements.push(imageId);
 			document.body.appendChild( unicorn );
@@ -94,7 +97,7 @@ var Konami = {
 		var wordsId = Konami.idPrefix + '_words';
 		Konami.elements.push(wordsId);
 		words.setAttribute('id', wordsId);
-		words.setAttribute('class', 'konami_code');
+		words.setAttribute('class', Konami.className);
 		words.innerHTML = Konami.words;
 		var _t_top = ( Math.floor( _top / 2 ) - 100 );
 		var _t_top = ( _t_top < 0 ) ? 0 : _t_top;
