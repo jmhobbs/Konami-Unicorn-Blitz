@@ -57,6 +57,10 @@
 				Adding this to your page is easy, just insert the following code above your <tt>&lt;/body&gt;</tt> tag.
 				<pre style="overflow: auto;">&lt;script type="text/javascript" src="http://github.com/jmhobbs/Konami-Unicorn-Blitz/raw/master/konami-unicorn-blitz.min.js"&gt;&lt;/script&gt;</pre>
 			</p>
+			<p>
+				Or, if you are a jQuery user you can use the jQuery version that <a href="http://github.com/blister">Eric Ryan Harrison</a> created.
+				<pre style="overflow: auto;">&lt;script type="text/javascript" src="http://github.com/jmhobbs/Konami-Unicorn-Blitz/raw/master/jQuery.konami-unicorn-blitz.js"&gt;&lt;/script&gt;</pre>
+			</p>
 
 			<h2>Configuration Options</h2>
 			<p>
@@ -64,14 +68,18 @@
 				<pre style="overflow: auto;">// Set this to whatever path (relative or absolute) where your images are stored.
 Konami.imagePath = 'http://github.com/jmhobbs/Konami-Unicorn-Blitz/raw/master/';
 // You need to have all of your images in the same format, numbered starting at 1
-Konami.imageCount: 4;
-Konami.imageFormat: '.gif';
+Konami.imageCount = 4;
+Konami.imageFormat = '.gif';
 // How many unicorns (or whatever) do you want to spam them with?
-Konami.unicornCount: 50;
+Konami.unicornCount = 50;
 // What do you want the text on top to be?
-Konami.words: 'UNICORNS';
+Konami.words = 'UNICORNS';
 // If you want to auto hide the unicorns after some time (in milliseconds).  &lt;= 0 means never.
-Konami.hideAfter: 0;</pre>
+Konami.hideAfter = 0;
+// Each image will have the id of this prefix, plus the iteration number appended
+Konami.idPrefix = 'konami_';
+// All of the images will be given this class
+Konami.className = 'konami_code';</pre>
 			</p>
 
 			<hr/>
